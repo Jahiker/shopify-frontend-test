@@ -2,6 +2,9 @@
 
 Technical test for frontend developer position
 
+Author: Jahiker Rojas - 
+https://jahiker.github.io/jahiker/
+
 ## Store preview
 
 Store: <https://jr-dev-shop.myshopify.com/>
@@ -48,6 +51,7 @@ First of all, I added 2 new settings for the section:
     "label": "t:sections.image-with-text.settings.video.label"
 },
 ```
+https://github.com/Jahiker/shopify-frontend-test/blob/main/sections/image-with-text.liquid
 
 For lazy load video I created a web component that is loaded on the theme.liquid file only if the layout contains a component that use it
 
@@ -56,6 +60,8 @@ For lazy load video I created a web component that is loaded on the theme.liquid
     <script src="{{ 'lazy-load-video.js' | asset_url }}" defer="defer"></script>
 {% endif %}
 ```
+https://github.com/Jahiker/shopify-frontend-test/blob/main/layout/theme.liquid
+
 
 Then for the web component I decide to use the Intersection Observer API, so in this way I make sure that we only load the video if it's intercepted by the viewport
 
@@ -79,6 +85,8 @@ Then for the web component I decide to use the Intersection Observer API, so in 
     this._getVideoSource();
   }
 ```
+https://github.com/Jahiker/shopify-frontend-test/blob/main/assets/lazy-load-video.js
+
 
 ### How the Web Component get the video assets
 
@@ -100,6 +108,8 @@ In order to get the video source and the video type, I pass through all the data
     </lazy-load-video>
 {% endif %}
 ```
+https://github.com/Jahiker/shopify-frontend-test/blob/main/sections/image-with-text.liquid
+
 
 ```javascript
   _getVideoSource() {
@@ -111,3 +121,12 @@ In order to get the video source and the video type, I pass through all the data
     });
   }
 ```
+https://github.com/Jahiker/shopify-frontend-test/blob/main/assets/lazy-load-video.js
+
+## Suggestions and potentials improvements:
+
+- Minyfy all the javascript and css before to deploy a new feature, in this way we can reduce the load size for the store.
+- Coditional load for the assets, as I did on the theme.liquid with the lazy-load-video.js asset, in this way we make sure not to load an assets more then once and not to load it if we don't need it.
+- add defer or asyn load for all the javascript.
+- Load images on web optimized format like webp.
+- Use lazy load technique for loading all the media assets.
