@@ -19,7 +19,7 @@ Password: devstore
 
 ### How it works
 
-First of all, I added 2 new settings for the section:
+First of all, I added 2 new settings for the section (At the end of the home page you can find the Image with text sections added):
 - one for select the media type you want to use in the sections, so in this way you can load an image or a video.
 - Second for the option to load a video.
 
